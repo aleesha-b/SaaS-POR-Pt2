@@ -42,6 +42,9 @@ TODO: How to install the base project.
 TODO: Instructions on how to use the project, This includes details of
 default users and other details.
 
+### How to use the API
+For instructions on how to use the API visit http://localhost/docs.
+
 
 # Credits
 
