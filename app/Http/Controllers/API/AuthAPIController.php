@@ -33,7 +33,8 @@ class AuthAPIController extends ApiBaseController
     }
 
     public function logout(Request $request){
-        auth()->user()->tokens()->logout();
+
+        auth()->user()->currentAccessToken()->delete();
 
         return [
             'message'=>'Logged out'
