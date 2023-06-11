@@ -7,7 +7,7 @@ A web based back-end interface for a library application.
 To develop this application we are using:
 - [Laravel (v9+)](https://laravel.com)
 - [Laravel Sanctum (v8)](https://laravel.com/docs/9.x/sanctum)
-- [Postman (v7)](#)
+- [Postman (v7)]()
 - [Blade (v3+)](https://laravel.com/docs/9.x/blade)
 - [Tailwind CSS (v3)](https://tailwindcss.com)
 
@@ -32,12 +32,14 @@ To develop this application we are using:
 Ensure docker is running.
 Run the following commands from three separate Ubuntu terminals to run the project.
 (Navigate to the root folder of the project before running each command).
-1. `sail up`
-2. `sail npm run dev`
-3. `sail artisan migrate:fresh --seed --step`
+1. Ensure docker is running
+2. `composer install — ignore-platform-reqs`
+2. `sail up`
+3. `sail npm run dev`
+4. `sail artisan migrate:fresh --seed --step`
 
 
-## How to use the API
+## How to use
 For instructions on how to use the API visit http://localhost/docs once you have the application up and running.
 
 # Credits
