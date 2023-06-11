@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthAPIController;
 use App\Http\Controllers\API\AuthorAPIController;
 use App\Http\Controllers\API\BookAPIController;
 use App\Http\Controllers\API\GenreAPIController;
@@ -18,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::resource('users', UserAPIController::class);
-Route::resource('publishers', PublisherAPIController::class);
-Route::resource('genres', GenreAPIController::class);
-Route::resource('authors', AuthorAPIController::class);
-Route::resource('books', BookAPIController::class);
+Route::post('login', [AuthAPIController::class, 'login']);
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::resource('users', UserAPIController::class);
+    Route::resource('publishers', PublisherAPIController::class);
+    Route::resource('genres', GenreAPIController::class);
+    Route::resource('authors', AuthorAPIController::class);
+    Route::resource('books', BookAPIController::class);
+    /* Logout a logged-in user */
+    Route::post('/logout', [AuthAPIController::class, 'logout']);
+});
