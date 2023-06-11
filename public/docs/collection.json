@@ -1,0 +1,1128 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "Library API Docs",
+        "_postman_id": "252bff84-cc6f-417b-8b15-e8e18e1a325c",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET Users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a list of all users.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"name\":\"Ad Ministrator\",\"email\":\"admin@example.com\",\"email_verified_at\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":2,\"name\":\"Aleesha Bretnall\",\"email\":\"aleesha@example.com\",\"email_verified_at\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":45,\"name\":\"Jacques d'Carre\",\"email\":\"jacques@example.com\",\"email_verified_at\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=1\",\"from\":1,\"last_page\":3,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=3\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users?page=2\",\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/users\",\"per_page\":3,\"prev_page_url\":null,\"to\":3,\"total\":7},\"message\":\"Retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST User.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Not available.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET User ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a user with the specified ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Ad Ministrator\",\"email\":\"admin@example.com\",\"email_verified_at\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},\"message\":\"Retrieved user successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "UPDATE User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Not available.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Not available.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Publishers",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publishers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/publishers"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a list of all publishers.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"name\":\"Houghton Mifflin Harcourt Publishing Company\",\"city\":\"Boston\",\"country_code\":\"USA\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":2,\"name\":\"Ars Libri Ltd.\",\"city\":\"Boston\",\"country_code\":\"USA\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":3,\"name\":\"DOM Publishers\",\"city\":\"Berlin\",\"country_code\":\"DEU\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":4,\"name\":\"Reprodukt\",\"city\":\"Berlin\",\"country_code\":\"DEU\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":5,\"name\":\"Reise Know-How Verlag Tondok\",\"city\":\"Munich\",\"country_code\":\"DEU\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":6,\"name\":\"Audible GmbH\",\"city\":\"Munich\",\"country_code\":\"DEU\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":7,\"name\":\"Claudio Medien GmbH\",\"city\":\"Munich\",\"country_code\":\"DEU\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":8,\"name\":\"Norma Editorial S A\",\"city\":\"Barcelona\",\"country_code\":\"ESP\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":9,\"name\":\"Ediciones Salamandra\",\"city\":\"Barcelona\",\"country_code\":\"ESP\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":10,\"name\":\"Montena Random House Mondadori\",\"city\":\"Barcelona\",\"country_code\":\"ESP\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=1\",\"from\":1,\"last_page\":4,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=4\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers?page=2\",\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/publishers\",\"per_page\":10,\"prev_page_url\":null,\"to\":10,\"total\":36},\"message\":\"Retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Publisher.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publishers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/publishers"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Store a new publisher record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Publisher ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publishers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/publishers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the publisher."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a publisher with the specified ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Houghton Mifflin Harcourt Publishing Company\",\"city\":\"Boston\",\"country_code\":\"USA\",\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},\"message\":\"Retrieved publisher successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "UPDATE Publisher ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publishers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/publishers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the publisher."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Update the specified publisher record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE Publisher ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publishers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/publishers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the publisher."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified publisher record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Genres",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a list of all genres.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"Unknown\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":2,\"name\":\"Fiction\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":3,\"name\":\"Non-Fiction\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":4,\"name\":\"Autobiography\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":5,\"name\":\"Science Fiction\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":6,\"name\":\"History\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":7,\"name\":\"Technical\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":8,\"name\":\"LGBTQIA+\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":9,\"name\":\"Classic\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":10,\"name\":\"Science\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":11,\"name\":\"Novel\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},{\"id\":12,\"name\":\"Philosophy\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"}],\"message\":\"Retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Genre.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Store a new genre record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Genre ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the genre."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a genre with the specified ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Unknown\",\"description\":null,\"created_at\":\"2023-06-11T04:29:53.000000Z\",\"updated_at\":\"2023-06-11T04:29:53.000000Z\"},\"message\":\"Retrieved genre successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "UPDATE Genre ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the genre."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Update the specified genre record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE Genre ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/genres\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/genres\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the genre."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified genre record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET authors",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/authors",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/authors"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a list of all authors.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"given_name\":\"UNKNOWN\",\"family_name\":\"AUTHOR\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":2,\"given_name\":\"UNKNOWN\",\"family_name\":\"CORPORATE AUTHOR\",\"is_company\":1,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":3,\"given_name\":\"Kevin\",\"family_name\":\"Yank\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":4,\"given_name\":\"Mark\",\"family_name\":\"Boulton\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":5,\"given_name\":\"Robert\",\"family_name\":\"Hoekman, jr.\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":6,\"given_name\":\"Luke\",\"family_name\":\"Wroblewski\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":7,\"given_name\":\"Kevin\",\"family_name\":\"Potts\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":8,\"given_name\":\"Goswami\",\"family_name\":\"Jaideva\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":9,\"given_name\":\"Foreman\",\"family_name\":\"John\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":10,\"given_name\":\"Hawking\",\"family_name\":\"Stephen\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=1\",\"from\":1,\"last_page\":14,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=14\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=10\",\"label\":\"10\",\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=13\",\"label\":\"13\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=14\",\"label\":\"14\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors?page=2\",\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/authors\",\"per_page\":10,\"prev_page_url\":null,\"to\":10,\"total\":136},\"message\":\"Retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Author.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/authors",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/authors"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Store a new author record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Author ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/authors\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/authors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the author."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a author with the specified ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"given_name\":\"UNKNOWN\",\"family_name\":\"AUTHOR\",\"is_company\":0,\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},\"message\":\"Retrieved author successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "UPDATE Author ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/authors\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/authors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the author."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Update the specified author record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE Author ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/authors\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/authors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the author."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified author record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Books",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/books",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/books"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a list of all books.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"title\":\"Fundamentals of Wavelets\",\"subtitle\":null,\"author\":\"Goswami, Jaideva\",\"genre\":\"technology\",\"sub_genre\":\"signal processing\",\"publisher\":\"Wiley\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"228\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":2,\"title\":\"Data Smart\",\"subtitle\":null,\"author\":\"Foreman, John\",\"genre\":\"technology\",\"sub_genre\":\"data science\",\"publisher\":\"Wiley\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"235\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":3,\"title\":\"God Created the Integers\",\"subtitle\":null,\"author\":\"Hawking, Stephen\",\"genre\":\"technology\",\"sub_genre\":\"mathematics\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"197\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":4,\"title\":\"Superfreakonomics\",\"subtitle\":null,\"author\":\"Dubner, Stephen\",\"genre\":\"science\",\"sub_genre\":\"economics\",\"publisher\":\"Harper Collins\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"179\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":5,\"title\":\"Orientalism\",\"subtitle\":null,\"author\":\"Said, Edward\",\"genre\":\"non-fiction\",\"sub_genre\":\"history\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"197\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":6,\"title\":\"Nature of Statistical Learning Theory, The\",\"subtitle\":null,\"author\":\"Vapnik, Vladimir\",\"genre\":\"technology\",\"sub_genre\":\"data science\",\"publisher\":\"Springer\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"230\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":7,\"title\":\"Integration of the Indian States\",\"subtitle\":null,\"author\":\"Menon, V P\",\"genre\":\"non-fiction\",\"sub_genre\":\"history\",\"publisher\":\"Orient Blackswan\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"217\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":8,\"title\":\"Drunkard's Walk, The\",\"subtitle\":null,\"author\":\"Mlodinow, Leonard\",\"genre\":\"science\",\"sub_genre\":\"mathematics\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"197\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":9,\"title\":\"Image Processing & Mathematical Morphology\",\"subtitle\":null,\"author\":\"Shih, Frank\",\"genre\":\"technology\",\"sub_genre\":\"signal processing\",\"publisher\":\"CRC\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"241\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":10,\"title\":\"How to Think Like Sherlock Holmes\",\"subtitle\":null,\"author\":\"Konnikova, Maria\",\"genre\":\"non-fiction\",\"sub_genre\":\"psychology\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"240\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":11,\"title\":\"Data Scientists at Work\",\"subtitle\":null,\"author\":\"Gutierrez, Sebastian\",\"genre\":\"technology\",\"sub_genre\":\"data science\",\"publisher\":\"Apress\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"230\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":12,\"title\":\"Slaughterhouse Five\",\"subtitle\":null,\"author\":\"Vonnegut, Kurt\",\"genre\":\"fiction\",\"sub_genre\":\"classic\",\"publisher\":\"Random House\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"198\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":13,\"title\":\"Birth of a Theorem\",\"subtitle\":null,\"author\":\"Villani, Cedric\",\"genre\":\"science\",\"sub_genre\":\"mathematics\",\"publisher\":\"Bodley Head\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"234\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":14,\"title\":\"Structure & Interpretation of Computer Programs\",\"subtitle\":null,\"author\":\"Sussman, Gerald\",\"genre\":\"technology\",\"sub_genre\":\"computer science\",\"publisher\":\"MIT Press\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"240\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":15,\"title\":\"Age of Wrath, The\",\"subtitle\":null,\"author\":\"Eraly, Abraham\",\"genre\":\"non-fiction\",\"sub_genre\":\"history\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"238\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":16,\"title\":\"Trial, The\",\"subtitle\":null,\"author\":\"Kafka, Frank\",\"genre\":\"fiction\",\"sub_genre\":\"classic\",\"publisher\":\"Random House\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"198\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":17,\"title\":\"Statistical Decision Theory'\",\"subtitle\":null,\"author\":\"Pratt, John\",\"genre\":\"technology\",\"sub_genre\":\"data science\",\"publisher\":\"MIT Press\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"236\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":18,\"title\":\"Data Mining Handbook\",\"subtitle\":null,\"author\":\"Nisbet, Robert\",\"genre\":\"technology\",\"sub_genre\":\"data science\",\"publisher\":\"Apress\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"242\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":19,\"title\":\"New Machiavelli, The\",\"subtitle\":null,\"author\":\"Wells, H. G.\",\"genre\":\"fiction\",\"sub_genre\":\"novel\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"180\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},{\"id\":20,\"title\":\"Physics & Philosophy\",\"subtitle\":null,\"author\":\"Heisenberg, Werner\",\"genre\":\"philosophy\",\"sub_genre\":\"science\",\"publisher\":\"Penguin\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"197\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=1\",\"from\":1,\"last_page\":11,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=11\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=10\",\"label\":\"10\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=11\",\"label\":\"11\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books?page=2\",\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/books\",\"per_page\":20,\"prev_page_url\":null,\"to\":20,\"total\":210},\"message\":\"Retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Book.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/books",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/books"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Store a new book record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET Book ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/books\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/books\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the book."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Return a book with the specified ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"title\":\"Fundamentals of Wavelets\",\"subtitle\":null,\"author\":\"Goswami, Jaideva\",\"genre\":\"technology\",\"sub_genre\":\"signal processing\",\"publisher\":\"Wiley\",\"year_published\":null,\"edition\":null,\"isbn_10\":null,\"isbn_13\":null,\"height\":\"228\",\"created_at\":\"2023-06-11T04:29:54.000000Z\",\"updated_at\":\"2023-06-11T04:29:54.000000Z\"},\"message\":\"Retrieved book successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "UPDATE Book ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/books\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/books\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the book."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Update the specified book record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE Book ID=",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/books\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/books\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the book."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified book record.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

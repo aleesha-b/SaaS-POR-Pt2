@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\AuthorAPIController;
+use App\Http\Controllers\API\BookAPIController;
 use App\Http\Controllers\API\GenreAPIController;
 use App\Http\Controllers\API\PublisherAPIController;
 use App\Http\Controllers\API\UserAPIController;
@@ -20,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 Route::resource('users', UserAPIController::class);
 Route::resource('publishers', PublisherAPIController::class);
 Route::resource('genres', GenreAPIController::class);
+Route::resource('authors', AuthorAPIController::class);
+Route::resource('books', BookAPIController::class);

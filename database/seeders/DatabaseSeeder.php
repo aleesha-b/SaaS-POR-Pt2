@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Country;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +23,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PublisherSeeder::class,
             GenreSeeder::class,
+            CountrySeeder::class,
+            AuthorSeeder::class,
+            BookSeeder::class,
         ]);
     }
 }

@@ -1,0 +1,2401 @@
+openapi: 3.0.3
+info:
+  title: 'Library API Docs'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/users:
+    get:
+      summary: 'GET Users'
+      operationId: gETUsers
+      description: 'Return a list of all users.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 1
+                        name: 'Ad Ministrator'
+                        email: admin@example.com
+                        email_verified_at: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 2
+                        name: 'Aleesha Bretnall'
+                        email: aleesha@example.com
+                        email_verified_at: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 45
+                        name: "Jacques d'Carre"
+                        email: jacques@example.com
+                        email_verified_at: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                    first_page_url: 'http://localhost:8000/api/users?page=1'
+                    from: 1
+                    last_page: 3
+                    last_page_url: 'http://localhost:8000/api/users?page=3'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/users?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost:8000/api/users?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/users?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/users?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost:8000/api/users?page=2'
+                    path: 'http://localhost:8000/api/users'
+                    per_page: 3
+                    prev_page_url: null
+                    to: 3
+                    total: 7
+                  message: 'Retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            name: 'Ad Ministrator'
+                            email: admin@example.com
+                            email_verified_at: null
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 2
+                            name: 'Aleesha Bretnall'
+                            email: aleesha@example.com
+                            email_verified_at: null
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 45
+                            name: "Jacques d'Carre"
+                            email: jacques@example.com
+                            email_verified_at: null
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Ad Ministrator'
+                            email:
+                              type: string
+                              example: admin@example.com
+                            email_verified_at:
+                              type: string
+                              example: null
+                            created_at:
+                              type: string
+                              example: '2023-06-11T04:29:53.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-06-11T04:29:53.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/users?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 3
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/users?page=3'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/users?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost:8000/api/users?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/users?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/users?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/users?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/users'
+                      per_page:
+                        type: integer
+                        example: 3
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 3
+                      total:
+                        type: integer
+                        example: 7
+                  message:
+                    type: string
+                    example: 'Retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'POST User.'
+      operationId: pOSTUser
+      description: 'Not available.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/users/{id}':
+    get:
+      summary: 'GET User ID='
+      operationId: gETUserID
+      description: 'Return a user with the specified ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    name: 'Ad Ministrator'
+                    email: admin@example.com
+                    email_verified_at: null
+                    created_at: '2023-06-11T04:29:53.000000Z'
+                    updated_at: '2023-06-11T04:29:53.000000Z'
+                  message: 'Retrieved user successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Ad Ministrator'
+                      email:
+                        type: string
+                        example: admin@example.com
+                      email_verified_at:
+                        type: string
+                        example: null
+                      created_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved user successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'UPDATE User'
+      operationId: uPDATEUser
+      description: 'Not available.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'DELETE User'
+      operationId: dELETEUser
+      description: 'Not available.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/publishers:
+    get:
+      summary: 'GET Publishers'
+      operationId: gETPublishers
+      description: 'Return a list of all publishers.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 1
+                        name: 'Houghton Mifflin Harcourt Publishing Company'
+                        city: Boston
+                        country_code: USA
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 2
+                        name: 'Ars Libri Ltd.'
+                        city: Boston
+                        country_code: USA
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 3
+                        name: 'DOM Publishers'
+                        city: Berlin
+                        country_code: DEU
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 4
+                        name: Reprodukt
+                        city: Berlin
+                        country_code: DEU
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 5
+                        name: 'Reise Know-How Verlag Tondok'
+                        city: Munich
+                        country_code: DEU
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 6
+                        name: 'Audible GmbH'
+                        city: Munich
+                        country_code: DEU
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 7
+                        name: 'Claudio Medien GmbH'
+                        city: Munich
+                        country_code: DEU
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 8
+                        name: 'Norma Editorial S A'
+                        city: Barcelona
+                        country_code: ESP
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 9
+                        name: 'Ediciones Salamandra'
+                        city: Barcelona
+                        country_code: ESP
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 10
+                        name: 'Montena Random House Mondadori'
+                        city: Barcelona
+                        country_code: ESP
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                    first_page_url: 'http://localhost:8000/api/publishers?page=1'
+                    from: 1
+                    last_page: 4
+                    last_page_url: 'http://localhost:8000/api/publishers?page=4'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/publishers?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost:8000/api/publishers?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/publishers?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/publishers?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/publishers?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost:8000/api/publishers?page=2'
+                    path: 'http://localhost:8000/api/publishers'
+                    per_page: 10
+                    prev_page_url: null
+                    to: 10
+                    total: 36
+                  message: 'Retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            name: 'Houghton Mifflin Harcourt Publishing Company'
+                            city: Boston
+                            country_code: USA
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 2
+                            name: 'Ars Libri Ltd.'
+                            city: Boston
+                            country_code: USA
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 3
+                            name: 'DOM Publishers'
+                            city: Berlin
+                            country_code: DEU
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 4
+                            name: Reprodukt
+                            city: Berlin
+                            country_code: DEU
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 5
+                            name: 'Reise Know-How Verlag Tondok'
+                            city: Munich
+                            country_code: DEU
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 6
+                            name: 'Audible GmbH'
+                            city: Munich
+                            country_code: DEU
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 7
+                            name: 'Claudio Medien GmbH'
+                            city: Munich
+                            country_code: DEU
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 8
+                            name: 'Norma Editorial S A'
+                            city: Barcelona
+                            country_code: ESP
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 9
+                            name: 'Ediciones Salamandra'
+                            city: Barcelona
+                            country_code: ESP
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                          -
+                            id: 10
+                            name: 'Montena Random House Mondadori'
+                            city: Barcelona
+                            country_code: ESP
+                            created_at: '2023-06-11T04:29:53.000000Z'
+                            updated_at: '2023-06-11T04:29:53.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Houghton Mifflin Harcourt Publishing Company'
+                            city:
+                              type: string
+                              example: Boston
+                            country_code:
+                              type: string
+                              example: USA
+                            created_at:
+                              type: string
+                              example: '2023-06-11T04:29:53.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-06-11T04:29:53.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/publishers?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 4
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/publishers?page=4'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/publishers?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost:8000/api/publishers?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/publishers?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/publishers?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/publishers?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/publishers?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/publishers'
+                      per_page:
+                        type: integer
+                        example: 10
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 10
+                      total:
+                        type: integer
+                        example: 36
+                  message:
+                    type: string
+                    example: 'Retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'POST Publisher.'
+      operationId: pOSTPublisher
+      description: 'Store a new publisher record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/publishers/{id}':
+    get:
+      summary: 'GET Publisher ID='
+      operationId: gETPublisherID
+      description: 'Return a publisher with the specified ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    name: 'Houghton Mifflin Harcourt Publishing Company'
+                    city: Boston
+                    country_code: USA
+                    created_at: '2023-06-11T04:29:53.000000Z'
+                    updated_at: '2023-06-11T04:29:53.000000Z'
+                  message: 'Retrieved publisher successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Houghton Mifflin Harcourt Publishing Company'
+                      city:
+                        type: string
+                        example: Boston
+                      country_code:
+                        type: string
+                        example: USA
+                      created_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved publisher successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'UPDATE Publisher ID='
+      operationId: uPDATEPublisherID
+      description: 'Update the specified publisher record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'DELETE Publisher ID='
+      operationId: dELETEPublisherID
+      description: 'Remove the specified publisher record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the publisher.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/genres:
+    get:
+      summary: 'GET Genres'
+      operationId: gETGenres
+      description: 'Return a list of all genres.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 1
+                      name: Unknown
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 2
+                      name: Fiction
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 3
+                      name: Non-Fiction
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 4
+                      name: Autobiography
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 5
+                      name: 'Science Fiction'
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 6
+                      name: History
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 7
+                      name: Technical
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 8
+                      name: LGBTQIA+
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 9
+                      name: Classic
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 10
+                      name: Science
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 11
+                      name: Novel
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                    -
+                      id: 12
+                      name: Philosophy
+                      description: null
+                      created_at: '2023-06-11T04:29:53.000000Z'
+                      updated_at: '2023-06-11T04:29:53.000000Z'
+                  message: 'Retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Unknown
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 2
+                        name: Fiction
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 3
+                        name: Non-Fiction
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 4
+                        name: Autobiography
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 5
+                        name: 'Science Fiction'
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 6
+                        name: History
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 7
+                        name: Technical
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 8
+                        name: LGBTQIA+
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 9
+                        name: Classic
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 10
+                        name: Science
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 11
+                        name: Novel
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                      -
+                        id: 12
+                        name: Philosophy
+                        description: null
+                        created_at: '2023-06-11T04:29:53.000000Z'
+                        updated_at: '2023-06-11T04:29:53.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Unknown
+                        description:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: '2023-06-11T04:29:53.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-06-11T04:29:53.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'POST Genre.'
+      operationId: pOSTGenre
+      description: 'Store a new genre record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/genres/{id}':
+    get:
+      summary: 'GET Genre ID='
+      operationId: gETGenreID
+      description: 'Return a genre with the specified ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    name: Unknown
+                    description: null
+                    created_at: '2023-06-11T04:29:53.000000Z'
+                    updated_at: '2023-06-11T04:29:53.000000Z'
+                  message: 'Retrieved genre successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: Unknown
+                      description:
+                        type: string
+                        example: null
+                      created_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-06-11T04:29:53.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved genre successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'UPDATE Genre ID='
+      operationId: uPDATEGenreID
+      description: 'Update the specified genre record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'DELETE Genre ID='
+      operationId: dELETEGenreID
+      description: 'Remove the specified genre record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the genre.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/authors:
+    get:
+      summary: 'GET authors'
+      operationId: gETAuthors
+      description: 'Return a list of all authors.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 1
+                        given_name: UNKNOWN
+                        family_name: AUTHOR
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 2
+                        given_name: UNKNOWN
+                        family_name: 'CORPORATE AUTHOR'
+                        is_company: 1
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 3
+                        given_name: Kevin
+                        family_name: Yank
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 4
+                        given_name: Mark
+                        family_name: Boulton
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 5
+                        given_name: Robert
+                        family_name: 'Hoekman, jr.'
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 6
+                        given_name: Luke
+                        family_name: Wroblewski
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 7
+                        given_name: Kevin
+                        family_name: Potts
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 8
+                        given_name: Goswami
+                        family_name: Jaideva
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 9
+                        given_name: Foreman
+                        family_name: John
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 10
+                        given_name: Hawking
+                        family_name: Stephen
+                        is_company: 0
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                    first_page_url: 'http://localhost:8000/api/authors?page=1'
+                    from: 1
+                    last_page: 14
+                    last_page_url: 'http://localhost:8000/api/authors?page=14'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost:8000/api/authors?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=5'
+                        label: '5'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=6'
+                        label: '6'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=7'
+                        label: '7'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=8'
+                        label: '8'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=9'
+                        label: '9'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=10'
+                        label: '10'
+                        active: false
+                      -
+                        url: null
+                        label: ...
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=13'
+                        label: '13'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=14'
+                        label: '14'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/authors?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost:8000/api/authors?page=2'
+                    path: 'http://localhost:8000/api/authors'
+                    per_page: 10
+                    prev_page_url: null
+                    to: 10
+                    total: 136
+                  message: 'Retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            given_name: UNKNOWN
+                            family_name: AUTHOR
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 2
+                            given_name: UNKNOWN
+                            family_name: 'CORPORATE AUTHOR'
+                            is_company: 1
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 3
+                            given_name: Kevin
+                            family_name: Yank
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 4
+                            given_name: Mark
+                            family_name: Boulton
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 5
+                            given_name: Robert
+                            family_name: 'Hoekman, jr.'
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 6
+                            given_name: Luke
+                            family_name: Wroblewski
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 7
+                            given_name: Kevin
+                            family_name: Potts
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 8
+                            given_name: Goswami
+                            family_name: Jaideva
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 9
+                            given_name: Foreman
+                            family_name: John
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 10
+                            given_name: Hawking
+                            family_name: Stephen
+                            is_company: 0
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            given_name:
+                              type: string
+                              example: UNKNOWN
+                            family_name:
+                              type: string
+                              example: AUTHOR
+                            is_company:
+                              type: integer
+                              example: 0
+                            created_at:
+                              type: string
+                              example: '2023-06-11T04:29:54.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-06-11T04:29:54.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/authors?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 14
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/authors?page=14'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost:8000/api/authors?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=5'
+                            label: '5'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=6'
+                            label: '6'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=7'
+                            label: '7'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=8'
+                            label: '8'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=9'
+                            label: '9'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=10'
+                            label: '10'
+                            active: false
+                          -
+                            url: null
+                            label: ...
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=13'
+                            label: '13'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=14'
+                            label: '14'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/authors?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/authors?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/authors'
+                      per_page:
+                        type: integer
+                        example: 10
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 10
+                      total:
+                        type: integer
+                        example: 136
+                  message:
+                    type: string
+                    example: 'Retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'POST Author.'
+      operationId: pOSTAuthor
+      description: 'Store a new author record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/authors/{id}':
+    get:
+      summary: 'GET Author ID='
+      operationId: gETAuthorID
+      description: 'Return a author with the specified ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    given_name: UNKNOWN
+                    family_name: AUTHOR
+                    is_company: 0
+                    created_at: '2023-06-11T04:29:54.000000Z'
+                    updated_at: '2023-06-11T04:29:54.000000Z'
+                  message: 'Retrieved author successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      given_name:
+                        type: string
+                        example: UNKNOWN
+                      family_name:
+                        type: string
+                        example: AUTHOR
+                      is_company:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '2023-06-11T04:29:54.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-06-11T04:29:54.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved author successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'UPDATE Author ID='
+      operationId: uPDATEAuthorID
+      description: 'Update the specified author record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'DELETE Author ID='
+      operationId: dELETEAuthorID
+      description: 'Remove the specified author record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/books:
+    get:
+      summary: 'GET Books'
+      operationId: gETBooks
+      description: 'Return a list of all books.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 1
+                        title: 'Fundamentals of Wavelets'
+                        subtitle: null
+                        author: 'Goswami, Jaideva'
+                        genre: technology
+                        sub_genre: 'signal processing'
+                        publisher: Wiley
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '228'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 2
+                        title: 'Data Smart'
+                        subtitle: null
+                        author: 'Foreman, John'
+                        genre: technology
+                        sub_genre: 'data science'
+                        publisher: Wiley
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '235'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 3
+                        title: 'God Created the Integers'
+                        subtitle: null
+                        author: 'Hawking, Stephen'
+                        genre: technology
+                        sub_genre: mathematics
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '197'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 4
+                        title: Superfreakonomics
+                        subtitle: null
+                        author: 'Dubner, Stephen'
+                        genre: science
+                        sub_genre: economics
+                        publisher: 'Harper Collins'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '179'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 5
+                        title: Orientalism
+                        subtitle: null
+                        author: 'Said, Edward'
+                        genre: non-fiction
+                        sub_genre: history
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '197'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 6
+                        title: 'Nature of Statistical Learning Theory, The'
+                        subtitle: null
+                        author: 'Vapnik, Vladimir'
+                        genre: technology
+                        sub_genre: 'data science'
+                        publisher: Springer
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '230'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 7
+                        title: 'Integration of the Indian States'
+                        subtitle: null
+                        author: 'Menon, V P'
+                        genre: non-fiction
+                        sub_genre: history
+                        publisher: 'Orient Blackswan'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '217'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 8
+                        title: "Drunkard's Walk, The"
+                        subtitle: null
+                        author: 'Mlodinow, Leonard'
+                        genre: science
+                        sub_genre: mathematics
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '197'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 9
+                        title: 'Image Processing & Mathematical Morphology'
+                        subtitle: null
+                        author: 'Shih, Frank'
+                        genre: technology
+                        sub_genre: 'signal processing'
+                        publisher: CRC
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '241'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 10
+                        title: 'How to Think Like Sherlock Holmes'
+                        subtitle: null
+                        author: 'Konnikova, Maria'
+                        genre: non-fiction
+                        sub_genre: psychology
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '240'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 11
+                        title: 'Data Scientists at Work'
+                        subtitle: null
+                        author: 'Gutierrez, Sebastian'
+                        genre: technology
+                        sub_genre: 'data science'
+                        publisher: Apress
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '230'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 12
+                        title: 'Slaughterhouse Five'
+                        subtitle: null
+                        author: 'Vonnegut, Kurt'
+                        genre: fiction
+                        sub_genre: classic
+                        publisher: 'Random House'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '198'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 13
+                        title: 'Birth of a Theorem'
+                        subtitle: null
+                        author: 'Villani, Cedric'
+                        genre: science
+                        sub_genre: mathematics
+                        publisher: 'Bodley Head'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '234'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 14
+                        title: 'Structure & Interpretation of Computer Programs'
+                        subtitle: null
+                        author: 'Sussman, Gerald'
+                        genre: technology
+                        sub_genre: 'computer science'
+                        publisher: 'MIT Press'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '240'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 15
+                        title: 'Age of Wrath, The'
+                        subtitle: null
+                        author: 'Eraly, Abraham'
+                        genre: non-fiction
+                        sub_genre: history
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '238'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 16
+                        title: 'Trial, The'
+                        subtitle: null
+                        author: 'Kafka, Frank'
+                        genre: fiction
+                        sub_genre: classic
+                        publisher: 'Random House'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '198'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 17
+                        title: "Statistical Decision Theory'"
+                        subtitle: null
+                        author: 'Pratt, John'
+                        genre: technology
+                        sub_genre: 'data science'
+                        publisher: 'MIT Press'
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '236'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 18
+                        title: 'Data Mining Handbook'
+                        subtitle: null
+                        author: 'Nisbet, Robert'
+                        genre: technology
+                        sub_genre: 'data science'
+                        publisher: Apress
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '242'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 19
+                        title: 'New Machiavelli, The'
+                        subtitle: null
+                        author: 'Wells, H. G.'
+                        genre: fiction
+                        sub_genre: novel
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '180'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                      -
+                        id: 20
+                        title: 'Physics & Philosophy'
+                        subtitle: null
+                        author: 'Heisenberg, Werner'
+                        genre: philosophy
+                        sub_genre: science
+                        publisher: Penguin
+                        year_published: null
+                        edition: null
+                        isbn_10: null
+                        isbn_13: null
+                        height: '197'
+                        created_at: '2023-06-11T04:29:54.000000Z'
+                        updated_at: '2023-06-11T04:29:54.000000Z'
+                    first_page_url: 'http://localhost:8000/api/books?page=1'
+                    from: 1
+                    last_page: 11
+                    last_page_url: 'http://localhost:8000/api/books?page=11'
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost:8000/api/books?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=5'
+                        label: '5'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=6'
+                        label: '6'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=7'
+                        label: '7'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=8'
+                        label: '8'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=9'
+                        label: '9'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=10'
+                        label: '10'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=11'
+                        label: '11'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/books?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    next_page_url: 'http://localhost:8000/api/books?page=2'
+                    path: 'http://localhost:8000/api/books'
+                    per_page: 20
+                    prev_page_url: null
+                    to: 20
+                    total: 210
+                  message: 'Retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            title: 'Fundamentals of Wavelets'
+                            subtitle: null
+                            author: 'Goswami, Jaideva'
+                            genre: technology
+                            sub_genre: 'signal processing'
+                            publisher: Wiley
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '228'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 2
+                            title: 'Data Smart'
+                            subtitle: null
+                            author: 'Foreman, John'
+                            genre: technology
+                            sub_genre: 'data science'
+                            publisher: Wiley
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '235'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 3
+                            title: 'God Created the Integers'
+                            subtitle: null
+                            author: 'Hawking, Stephen'
+                            genre: technology
+                            sub_genre: mathematics
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '197'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 4
+                            title: Superfreakonomics
+                            subtitle: null
+                            author: 'Dubner, Stephen'
+                            genre: science
+                            sub_genre: economics
+                            publisher: 'Harper Collins'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '179'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 5
+                            title: Orientalism
+                            subtitle: null
+                            author: 'Said, Edward'
+                            genre: non-fiction
+                            sub_genre: history
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '197'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 6
+                            title: 'Nature of Statistical Learning Theory, The'
+                            subtitle: null
+                            author: 'Vapnik, Vladimir'
+                            genre: technology
+                            sub_genre: 'data science'
+                            publisher: Springer
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '230'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 7
+                            title: 'Integration of the Indian States'
+                            subtitle: null
+                            author: 'Menon, V P'
+                            genre: non-fiction
+                            sub_genre: history
+                            publisher: 'Orient Blackswan'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '217'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 8
+                            title: "Drunkard's Walk, The"
+                            subtitle: null
+                            author: 'Mlodinow, Leonard'
+                            genre: science
+                            sub_genre: mathematics
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '197'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 9
+                            title: 'Image Processing & Mathematical Morphology'
+                            subtitle: null
+                            author: 'Shih, Frank'
+                            genre: technology
+                            sub_genre: 'signal processing'
+                            publisher: CRC
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '241'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 10
+                            title: 'How to Think Like Sherlock Holmes'
+                            subtitle: null
+                            author: 'Konnikova, Maria'
+                            genre: non-fiction
+                            sub_genre: psychology
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '240'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 11
+                            title: 'Data Scientists at Work'
+                            subtitle: null
+                            author: 'Gutierrez, Sebastian'
+                            genre: technology
+                            sub_genre: 'data science'
+                            publisher: Apress
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '230'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 12
+                            title: 'Slaughterhouse Five'
+                            subtitle: null
+                            author: 'Vonnegut, Kurt'
+                            genre: fiction
+                            sub_genre: classic
+                            publisher: 'Random House'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '198'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 13
+                            title: 'Birth of a Theorem'
+                            subtitle: null
+                            author: 'Villani, Cedric'
+                            genre: science
+                            sub_genre: mathematics
+                            publisher: 'Bodley Head'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '234'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 14
+                            title: 'Structure & Interpretation of Computer Programs'
+                            subtitle: null
+                            author: 'Sussman, Gerald'
+                            genre: technology
+                            sub_genre: 'computer science'
+                            publisher: 'MIT Press'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '240'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 15
+                            title: 'Age of Wrath, The'
+                            subtitle: null
+                            author: 'Eraly, Abraham'
+                            genre: non-fiction
+                            sub_genre: history
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '238'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 16
+                            title: 'Trial, The'
+                            subtitle: null
+                            author: 'Kafka, Frank'
+                            genre: fiction
+                            sub_genre: classic
+                            publisher: 'Random House'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '198'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 17
+                            title: "Statistical Decision Theory'"
+                            subtitle: null
+                            author: 'Pratt, John'
+                            genre: technology
+                            sub_genre: 'data science'
+                            publisher: 'MIT Press'
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '236'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 18
+                            title: 'Data Mining Handbook'
+                            subtitle: null
+                            author: 'Nisbet, Robert'
+                            genre: technology
+                            sub_genre: 'data science'
+                            publisher: Apress
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '242'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 19
+                            title: 'New Machiavelli, The'
+                            subtitle: null
+                            author: 'Wells, H. G.'
+                            genre: fiction
+                            sub_genre: novel
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '180'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                          -
+                            id: 20
+                            title: 'Physics & Philosophy'
+                            subtitle: null
+                            author: 'Heisenberg, Werner'
+                            genre: philosophy
+                            sub_genre: science
+                            publisher: Penguin
+                            year_published: null
+                            edition: null
+                            isbn_10: null
+                            isbn_13: null
+                            height: '197'
+                            created_at: '2023-06-11T04:29:54.000000Z'
+                            updated_at: '2023-06-11T04:29:54.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            title:
+                              type: string
+                              example: 'Fundamentals of Wavelets'
+                            subtitle:
+                              type: string
+                              example: null
+                            author:
+                              type: string
+                              example: 'Goswami, Jaideva'
+                            genre:
+                              type: string
+                              example: technology
+                            sub_genre:
+                              type: string
+                              example: 'signal processing'
+                            publisher:
+                              type: string
+                              example: Wiley
+                            year_published:
+                              type: string
+                              example: null
+                            edition:
+                              type: string
+                              example: null
+                            isbn_10:
+                              type: string
+                              example: null
+                            isbn_13:
+                              type: string
+                              example: null
+                            height:
+                              type: string
+                              example: '228'
+                            created_at:
+                              type: string
+                              example: '2023-06-11T04:29:54.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-06-11T04:29:54.000000Z'
+                      first_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/books?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 11
+                      last_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/books?page=11'
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost:8000/api/books?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=5'
+                            label: '5'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=6'
+                            label: '6'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=7'
+                            label: '7'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=8'
+                            label: '8'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=9'
+                            label: '9'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=10'
+                            label: '10'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=11'
+                            label: '11'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/books?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      next_page_url:
+                        type: string
+                        example: 'http://localhost:8000/api/books?page=2'
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/books'
+                      per_page:
+                        type: integer
+                        example: 20
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 20
+                      total:
+                        type: integer
+                        example: 210
+                  message:
+                    type: string
+                    example: 'Retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'POST Book.'
+      operationId: pOSTBook
+      description: 'Store a new book record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/books/{id}':
+    get:
+      summary: 'GET Book ID='
+      operationId: gETBookID
+      description: 'Return a book with the specified ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    title: 'Fundamentals of Wavelets'
+                    subtitle: null
+                    author: 'Goswami, Jaideva'
+                    genre: technology
+                    sub_genre: 'signal processing'
+                    publisher: Wiley
+                    year_published: null
+                    edition: null
+                    isbn_10: null
+                    isbn_13: null
+                    height: '228'
+                    created_at: '2023-06-11T04:29:54.000000Z'
+                    updated_at: '2023-06-11T04:29:54.000000Z'
+                  message: 'Retrieved book successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: 'Fundamentals of Wavelets'
+                      subtitle:
+                        type: string
+                        example: null
+                      author:
+                        type: string
+                        example: 'Goswami, Jaideva'
+                      genre:
+                        type: string
+                        example: technology
+                      sub_genre:
+                        type: string
+                        example: 'signal processing'
+                      publisher:
+                        type: string
+                        example: Wiley
+                      year_published:
+                        type: string
+                        example: null
+                      edition:
+                        type: string
+                        example: null
+                      isbn_10:
+                        type: string
+                        example: null
+                      isbn_13:
+                        type: string
+                        example: null
+                      height:
+                        type: string
+                        example: '228'
+                      created_at:
+                        type: string
+                        example: '2023-06-11T04:29:54.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-06-11T04:29:54.000000Z'
+                  message:
+                    type: string
+                    example: 'Retrieved book successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'UPDATE Book ID='
+      operationId: uPDATEBookID
+      description: 'Update the specified book record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'DELETE Book ID='
+      operationId: dELETEBookID
+      description: 'Remove the specified book record.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the book.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
