@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ route('books.create') }}"
-                       class="rounded mb-10 p-2 bg-emerald-800 text-white text-center w-1/5 min-w-64 hover:bg-emerald-500">
-                        Add new Book</a>
+                       class="rounded mb-10 p-2 bg-emerald-600 text-white text-center w-1/5 min-w-64 hover:bg-emerald-800">
+                        Add New Book</a>
                     <p class="m-4"></p>
                     <table class="table w-full">
                         <thead class="border border-stone-300">
@@ -30,8 +30,18 @@
                             <tr class="border-b border-stone-300 hover:bg-stone-200">
                             <td class="p-2 text-right">{{ $loop->iteration }}</td>
                             <td class="p-2">{{ $book->title }}</td>
-                            <td class="p-2">{{ $book->author }}</td>
-                            <td class="p-2">{{ $book->genre }}</td>
+                            <td class="p-2">
+                                @foreach($book->authors as $author)
+                                    {{ $loop->first ? '' : ', ' }}
+                                    {{ $author->given_name }} {{ $author->family_name }}
+                                @endforeach
+                            </td>
+                            <td class="p-2">
+                                @foreach($book->genres as $genre)
+                                    {{ $loop->first ? '' : ', ' }}
+                                    {{ $genre->name }}
+                                @endforeach
+                            </td>
                             <td class="p-2">{{ $book->publisher }}</td>
                             <td class="p-2">{{ $book->isbn_10 ?? $book->isbn_13 }}</td>
                             <td class="p-2">

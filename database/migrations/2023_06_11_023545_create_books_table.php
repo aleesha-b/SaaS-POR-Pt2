@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('title');
             $table->string('subtitle')->nullable();
-            $table->string('author')->nullable();
-            $table->string('genre');
-            $table->string('sub_genre')->nullable();
             $table->string('publisher')->nullable();
             $table->integer('year_published')->nullable();
             $table->integer('edition')->nullable();

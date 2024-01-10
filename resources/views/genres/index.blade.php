@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ route('genres.create') }}"
-                       class="rounded mb-10 p-2 bg-emerald-800 text-white text-center w-1/5 min-w-64 hover:bg-emerald-500">
-                        Add new Genre</a>
+                       class="rounded mb-10 p-2 bg-emerald-600 text-white text-center w-1/5 min-w-64 hover:bg-emerald-800">
+                        Add New Genre</a>
                     <p class="m-4"></p>
                     <table class="table w-full">
                         <thead class="border border-stone-300">

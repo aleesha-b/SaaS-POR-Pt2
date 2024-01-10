@@ -49,10 +49,11 @@
                                 @enderror
                             </div>
                             <div class="grid grid-cols-6 gap-1">
-                                <label for="Author" class="">{{ __("Author") }}</label>
+                                <label for="Authors" class="">{{ __("Author/s") }}</label>
                                 <input type="text"
-                                       id="Author" name="author"
-                                       value="{{ old('author')?? $book->author }}"
+                                       id="Authors" name="authors"
+                                       value="@if(is_null(old('authors')))@foreach($book->authors as $author){{ $loop->first ? '' : ', ' }}{{ $author->given_name }} {{$author->family_name}}@endforeach
+@endif"
                                 class="p-2 col-span-5">
                                 @error('author')
                                 <span></span>
@@ -62,25 +63,13 @@
                                 @enderror
                             </div>
                             <div class="grid grid-cols-6 gap-1">
-                                <label for="Genre" class="">{{ __("Genre") }}</label>
+                                <label for="Genres" class="">{{ __("Genre/s") }}</label>
                                 <input type="text"
-                                       id="Genre" name="genre"
-                                       value="{{ old('genre')?? $book->genre }}"
+                                       id="Genres" name="genres"
+                                       value="@if(is_null(old('genres')))@foreach($book->genres as $genre){{ $loop->first ? '' : ', ' }}{{ $genre->name }}@endforeach
+@endif"
                                 class="p-2 col-span-5">
                                 @error('genre')
-                                <span></span>
-                                <p class="text-red-800 mb-2 text-sm col-span-5">
-                                    {{ $message }}
-                                </p>
-                                @enderror
-                            </div>
-                            <div class="grid grid-cols-6 gap-1">
-                                <label for="Sub Genre" class="">{{ __("Sub Genre") }}</label>
-                                <input type="text"
-                                       id="Sub Genre" name="sub_genre"
-                                       value="{{ old('sub_genre')?? $book->sub_genre }}"
-                                class="p-2 col-span-5">
-                                @error('sub_genre')
                                 <span></span>
                                 <p class="text-red-800 mb-2 text-sm col-span-5">
                                     {{ $message }}
@@ -176,9 +165,9 @@
                                     </a>
 
                                     <button type="submit"
-                                            class="py-2 px-4 mx-2 w-1/6 text-center rounded border border-red-600
-                                            hover:bg-red-600 text-red-600 hover:text-white transition duration-500">
-                                        <i class="fa fa-trash"></i> {{ __("Save") }}
+                                            class="py-2 px-4 mx-2 w-1/6 text-center rounded border border-emerald-600
+                                            hover:bg-emerald-600 text-emerald-600 hover:text-white transition duration-500">
+                                        <i class="fa fa-save"></i> {{ __("Save") }}
                                     </button>
                                 </div>
                             </div>

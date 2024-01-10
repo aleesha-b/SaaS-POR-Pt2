@@ -14,25 +14,76 @@
                     </h3>
                     <div class="grid grid-cols-4">
                         <p class="">{{ __("Title") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->title }}</p>
-                        <p class="">{{ __("Author") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->author }}</p>
-                        <p class="">{{ __("Genre") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->genre }}</p>
-                        <p class="">{{ __("Sub Genre") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->sub_genre }}</p>
+                        <p class="p-2 col-span-3">
+                            {{ $book->title }}
+                        </p>
+                        <p class="">{{ __("Author/s") }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(!empty($book->authors))
+                                @foreach($book->authors as $author)
+                                    {{ $loop->first ? '' : ', ' }}
+                                    {{ $author->given_name }} {{ $author->family_name }}
+                                @endforeach
+                            @else
+                                &nbsp;
+                            @endif
+                            &nbsp;
+                        </p>
+                        <p class="">{{ __("Genre/s") }}</p>
+                        <p class="p-2 col-span-3">
+                            @foreach($book->genres as $genre)
+                                {{ $loop->first ? '' : ', ' }}
+                                {{ $genre->name }}
+                            @endforeach
+                        </p>
                         <p class="">{{ __("Publisher") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->publisher }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->publisher))
+                                {{ $book->publisher }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <p class="">{{ __("Year Published") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->year_published }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->year_published))
+                                {{ $book->year_published }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <p class="">{{ __("Edition") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->edition }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->edition))
+                                {{ $book->edition }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <p class="">{{ __("ISBN 10") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->isbn_10 }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->isbn_10))
+                                {{ $book->isbn_10 }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <p class="">{{ __("ISBN 13") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->isbn_13 }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->isbn_13))
+                                {{ $book->isbn_13 }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <p class="">{{ __("Height") }}</p>
-                        <p class="p-2 col-span-3">{{ $book->height }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(isset($book->height))
+                                {{ $book->height }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
                         <div class=""></div>
                         <form action="{{ route('books.destroy', compact(['book'])) }}"
                               method="POST"
@@ -54,7 +105,7 @@
                                        hover:bg-red-600
                                        text-red-600 hover:text-white
                                        transition duration-500">
-                                <i class="fa fa-trash"></i> {{ __("Confirm Delete") }}
+                                <i class="fa fa-trash"></i> {{ __("Delete") }}
                             </button>
                         </form>
 

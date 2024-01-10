@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Genre;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -37,9 +38,6 @@ class BookAPIController extends ApiBaseController
         $validated = [
             'title' => $request['title'],
             'subtitle' => $request['subtitle'],
-            'author' => $request['author'],
-            'genre' => $request['genre'],
-            'sub_genre' => $request['sub_genre'],
             'publisher' => $request['publisher'],
             'year_published' => $request['year_published'],
             'edition' => $request['edition'],
@@ -47,25 +45,56 @@ class BookAPIController extends ApiBaseController
             'isbn_13' => $request['isbn_13'],
             'height' => $request['height']
         ];
-        $author = $validated['author'];
-        if (!is_null($author)) {
-            if ($comma = mb_strpos($author, ",")) {
-                $authorGiven = trim(mb_substr($author, 0, $comma));
-                $authorFamily = trim(mb_substr($author, $comma + 1, mb_strlen($author)));
-            } else {
-                $authorGiven = null;
-                $authorFamily = $author;
-            }
-            $author = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();
-            if (is_null($author)) {
-                $newAuthor = [
-                    "given_name" => $authorGiven,
-                    "family_name" => $authorFamily,
-                ];
-                Author::create($newAuthor);
+
+        if (isset($request['genres'])) {
+            $genres = explode(',', $request['genres']);
+            $genresList = [];
+            foreach ($genres as $genre) {
+                $genre = trim($genre);
+                $theGenre = Genre::whereName($genre)->first();
+                if (is_null($theGenre)) {
+                    $newGenre = [
+                        "name" => $genre,
+                        "description" => null,
+                    ];
+                    $theGenre = Genre::create($newGenre);
+                }
+                $genresList[] = $theGenre->id;
             }
         }
+        else{
+            return $this->sendError("Unable to create book, missing genres field.");
+        }
+
         $results = Book::create($validated);
+        $results->genres()->attach($genresList);
+
+        if (isset($request['authors'])) {
+            $authors = explode(',', $validated['authors']);
+            $authorsList = [];
+
+            foreach ($authors as $author) {
+                $author = trim($author);
+                $authorGiven = null;
+                $authorFamily = $author;
+                $authorFullName = explode(' ', $author);
+                if (count($authorFullName) > 1) {
+                    $authorGiven = str_replace(' ' . end($authorFullName), '', $author);
+                    $authorFamily = end($authorFullName);
+                }
+                $theAuthor = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();
+                if (is_null($theAuthor)) {
+                    $newAuthor = [
+                        "given_name" => $authorGiven,
+                        "family_name" => $authorFamily,
+                    ];
+                    $theAuthor = Author::create($newAuthor);
+                }
+                $authorsList[] = $theAuthor->id;
+            }
+            $results->authors()->attach($authorsList);
+        }
+
         if (!is_null($results) && $results->count() > 0) {
             return $this->sendResponse(
                 $results,
@@ -105,9 +134,6 @@ class BookAPIController extends ApiBaseController
             $validated = [
                 'title' => $request['title'] ?? $book['title'],
                 'subtitle' => $request['subtitle'] ?? $book['subtitle'],
-                'author' => $request['author'] ?? $book['author'],
-                'genre' => $request['genre'] ?? $book['genre'],
-                'sub_genre' => $request['sub_genre'] ?? $book['sub_genre'],
                 'publisher' => $request['publisher'] ?? $book['publisher'],
                 'year_published' => $request['year_published'] ?? $book['year_published'],
                 'edition' => $request['edition'] ?? $book['edition'],
@@ -116,6 +142,52 @@ class BookAPIController extends ApiBaseController
                 'height' => $request['height'] ?? $book['height']
             ];
             $isUpdated = $book->update($validated);
+
+            if (!is_null($request['authors'])) {
+                $authors = explode(',', $validated['authors']);
+                $authorsList = [];
+
+                foreach ($authors as $author) {
+                    $author = trim($author);
+                    $authorGiven = null;
+                    $authorFamily = $author;
+                    $authorFullName = explode(' ', $author);
+                    if (count($authorFullName) > 1) {
+                        $authorGiven = str_replace(' ' . end($authorFullName), '', $author);
+                        $authorFamily = end($authorFullName);
+                    }
+                    $theAuthor = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();
+                    if (is_null($theAuthor)) {
+                        $newAuthor = [
+                            "given_name" => $authorGiven,
+                            "family_name" => $authorFamily,
+                        ];
+                        $theAuthor = Author::create($newAuthor);
+                    }
+                    $authorsList[] = $theAuthor->id;
+                }
+                $book->authors()->detach();
+                $book->authors()->attach($authorsList);
+            }
+
+            if (!is_null($request['genres'])) {
+                $genres = explode(',', $request['genres']);
+                $genresList = [];
+                foreach ($genres as $genre) {
+                    $genre = trim($genre);
+                    $theGenre = Genre::whereName($genre)->first();
+                    if (is_null($theGenre)) {
+                        $newGenre = [
+                            "name" => $genre,
+                            "description" => null,
+                        ];
+                        $theGenre = Genre::create($newGenre);
+                    }
+                    $genresList[] = $theGenre->id;
+                }
+                $book->genres()->detach();
+                $book->genres()->attach($genresList);
+            }
             if ($isUpdated){
                 return $this->sendResponse(
                     $book,

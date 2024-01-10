@@ -58,9 +58,9 @@
                                     </a>
 
                                     <button type="submit"
-                                            class="py-2 px-4 mx-2 w-1/6 text-center rounded border border-red-600
-                                            hover:bg-red-600 text-red-600 hover:text-white transition duration-500">
-                                        <i class="fa fa-trash"></i> {{ __("Save") }}
+                                            class="py-2 px-4 mx-2 w-1/6 text-center rounded border border-emerald-600
+                                            hover:bg-emerald-600 text-emerald-600 hover:text-white transition duration-500">
+                                        <i class="fa fa-save"></i> {{ __("Save") }}
                                     </button>
                                 </div>
                             </div>

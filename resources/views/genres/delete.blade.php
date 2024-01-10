@@ -14,9 +14,21 @@
                     </h3>
                     <div class="grid grid-cols-4">
                         <p class="">{{ __("Genre") }}</p>
-                        <p class="p-2 col-span-3">{{ $genre->name }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(@isset($genre->name))
+                                {{ $genre->name }}
+                            @else
+                                -
+                            @endif
+                        </p>
                         <p class="">{{ __("Description") }}</p>
-                        <p class="p-2 col-span-3">{{ $genre->description }}</p>
+                        <p class="p-2 col-span-3">
+                            @if(@isset($genre->description))
+                                {{ $genre->description }}
+                            @else
+                                -
+                            @endif
+                        </p>
 
                         <div class=""></div>
                         <form action="{{ route('genres.destroy', compact(['genre'])) }}"
@@ -39,7 +51,7 @@
                                        hover:bg-red-600
                                        text-red-600 hover:text-white
                                        transition duration-500">
-                                <i class="fa fa-trash"></i> {{ __("Confirm Delete") }}
+                                <i class="fa fa-trash"></i> {{ __("Delete") }}
                             </button>
                         </form>
 

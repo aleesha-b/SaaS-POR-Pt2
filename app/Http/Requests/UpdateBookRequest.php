@@ -28,14 +28,11 @@ class UpdateBookRequest extends FormRequest
             'subtitle' => [
                 'nullable'
             ],
-            'author' => [
+            'authors' => [
                 'nullable'
             ],
-            'genre' => [
+            'genres' => [
                 'required'
-            ],
-            'sub_genre' => [
-                'nullable'
             ],
             'publisher' => [
                 'nullable'

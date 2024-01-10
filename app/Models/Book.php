@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Book extends Model
 {
@@ -12,9 +13,6 @@ class Book extends Model
     protected $fillable = [
         'title',
         'subtitle',
-        'author',
-        'genre',
-        'sub_genre',
         'publisher',
         'year_published',
         'edition',
@@ -22,4 +20,24 @@ class Book extends Model
         'isbn_13',
         'height'
     ];
+
+    /**
+     * Return the Authors of a book (Many-to-many)
+     *
+     * @return BelongsToMany
+     */
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class);
+    }
+
+    /**
+     * Return the Genres of a book (Many-to-many)
+     *
+     * @return BelongsToMany
+     */
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class);
+    }
 }
